@@ -1,0 +1,25 @@
+
+type Query {
+    mpsalespop (
+        ids: [Int] @doc(description: "Ids of the sales popups")
+    ): SalesPops
+    @resolver(class: "Mageplaza\\SalesPopGraphQl\\Model\\Resolver\\SalesPop") @doc(description: "The sales pop query returns information about popups") @cache(cacheIdentity: "Mageplaza\\SalesPopGraphQl\\Model\\Resolver\\SalesPop\\Identity")
+}
+
+type SalesPops @doc(description: "Salespop information") {
+    items: [SalesPop] @doc(description: "An array of popups")
+}
+
+type SalesPop @doc(description: "Salespop defines all Salespop information") {
+    pop_id: Int @doc(description: "Popup id")
+    name: String @doc(description: "name of sales pop")
+    status: String @doc(description: "Popup status")
+    content: String @doc(description: "Popup content")
+    pop_type: String @doc(description: "Popup type")
+    device: String @doc(description: "Popup show on device")
+    position: String @doc(description: "Popup position")
+    view: Int @doc(description: "number of popup views")
+    click: Int @doc(description: "number of popup clicks")
+    close: Int @doc(description: "number of popup closes")
+    parent_id: Int @doc(description: "Popup parent id")
+}
