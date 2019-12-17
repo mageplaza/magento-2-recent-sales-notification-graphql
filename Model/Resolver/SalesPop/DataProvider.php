@@ -22,9 +22,10 @@ declare(strict_types=1);
 
 namespace Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop;
 
-use Magento\Framework\Exception\NoSuchEntityException;
-use Mageplaza\SalesPop\Api\Data\SalesPopInterface;
-use Mageplaza\SalesPop\Api\SalesPopRepositoryInterface;
+use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
+use Magento\Framework\Api\SearchCriteriaInterface;
+use Mageplaza\SalesPop\Model\ResourceModel\SalesPop\Collection;
+use Mageplaza\SalesPop\Model\ResourceModel\SalesPop\CollectionFactory;
 
 /**
  * Class DataProvider
@@ -33,39 +34,40 @@ use Mageplaza\SalesPop\Api\SalesPopRepositoryInterface;
 class DataProvider
 {
     /**
-     * @var SalesPopRepositoryInterface
+     * @var CollectionProcessorInterface
      */
-    protected $salesPopRepository;
+    protected $collectionProcessor;
+
+    /**
+     * @var CollectionFactory
+     */
+    protected $collectionFactory;
 
     /**
      * DataProvider constructor.
      *
-     * @param SalesPopRepositoryInterface $salesPopRepository
+     * @param CollectionProcessorInterface $collectionProcessor
+     * @param CollectionFactory $collectionFactory
      */
     public function __construct(
-        SalesPopRepositoryInterface $salesPopRepository
+        CollectionProcessorInterface $collectionProcessor,
+        CollectionFactory $collectionFactory
     ) {
-        $this->salesPopRepository = $salesPopRepository;
+        $this->collectionProcessor = $collectionProcessor;
+        $this->collectionFactory   = $collectionFactory;
     }
 
     /**
-     * Get the salespop data
+     * @param SearchCriteriaInterface $searchCriteria
      *
-     * @param int $popId
-     *
-     * @return SalesPopInterface
-     * @throws NoSuchEntityException
+     * @return Collection
      */
-    public function getData(int $popId): SalesPopInterface
-    {
-        return $this->salesPopRepository->getById($popId);
-    }
+    public function getData(
+        SearchCriteriaInterface $searchCriteria
+    ): Collection {
+        $collection = $this->collectionFactory->create();
+        $this->collectionProcessor->process($searchCriteria, $collection);
 
-    /**
-     * @return array
-     */
-    public function getList(): array
-    {
-        return $this->salesPopRepository->getList();
+        return $collection;
     }
 }
