@@ -15,7 +15,7 @@ type SalesPops @doc(description: "Salespop information") {
 }
 
 type SalesPop @doc(description: "Salespop defines all Salespop information") {
-    pop_id: Int @doc(description: "Popup id")
+    pop_id: Int @doc(description: "Popup ID")
     name: String @doc(description: "Salespop name")
     status: Int @doc(description: "Popup status")
     store_ids: String @doc(description: "Store Views")
@@ -26,8 +26,8 @@ type SalesPop @doc(description: "Salespop defines all Salespop information") {
     position: String @doc(description: "Popup position")
     page: Int @doc(description: "Popup display on page")
     page_type: Int @doc(description: "Popup display on page type")
-    cms_page_id: String @doc(description: "Popup display on cms page id")
-    category_ids: String @doc(description: "Popup display on category ids")
+    cms_page_id: String @doc(description: "Popup display on cms page ID")
+    category_ids: String @doc(description: "Popup display on category IDs")
     show_product_page: Int @doc(description: "Popup display on product page")
     number_recent_order: Int @doc(description: "The limitation number of orders are selected to show the purchased products on live popups")
     check_order_time: Int @doc(description: "Specify the time amount to check order data")
@@ -36,10 +36,10 @@ type SalesPop @doc(description: "Salespop defines all Salespop information") {
     border_color: String @doc(description: "Popup border color")
     text_color: String @doc(description: "Popup text color")
     hover_link_color: String @doc(description: "Popup hover link color")
-    view: Int @doc(description: "number of popup views")
-    click: Int @doc(description: "number of popup clicks")
-    close: Int @doc(description: "number of popup closes")
-    parent_id: Int @doc(description: "Popup parent id")
+    view: Int @doc(description: "Number of popup views")
+    click: Int @doc(description: "Number of popup clicks")
+    close: Int @doc(description: "Number of popup closes")
+    parent_id: Int @doc(description: "Popup parent ID")
 }
 
 input SalesPopFilterInput @doc(description: "SalesPopFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.") {
