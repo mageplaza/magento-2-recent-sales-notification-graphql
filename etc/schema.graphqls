@@ -25,7 +25,7 @@ type SalesPop @doc(description: "Salespop defines all Salespop information") {
     device: Int @doc(description: "Popup show on device")
     position: String @doc(description: "Popup position")
     page: Int @doc(description: "Popup display on page")
-    page_type: Int @doc(description: "Popup display on page type")
+    page_type: String @doc(description: "Popup display on page type")
     cms_page_id: String @doc(description: "Popup display on cms page ID")
     category_ids: String @doc(description: "Popup display on category IDs")
     show_product_page: Int @doc(description: "Popup display on product page")
