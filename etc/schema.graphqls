@@ -1,0 +1,52 @@
+
+type Query {
+    mpsalespop (
+        filter: SalesPopFilterInput @doc(description: "Identifies which popup attributes to search for and return."),
+        pageSize: Int = 20 @doc(description: "Specifies the maximum number of results to return at once. This attribute is optional."),
+        currentPage: Int = 1 @doc(description: "Specifies which page of results to return. The default value is 1.")
+    ): SalesPops
+    @resolver(class: "Mageplaza\\SalesPopGraphQl\\Model\\Resolver\\SalesPop") @doc(description: "The sales pop query returns information about popups") @cache(cacheIdentity: "Mageplaza\\SalesPopGraphQl\\Model\\Resolver\\SalesPop\\Identity")
+}
+
+type SalesPops @doc(description: "Salespop information") {
+    items: [SalesPop] @doc(description: "An array of popups")
+    total_count: Int @doc(description: "The number of salespop returned")
+    page_info: SearchResultPageInfo @doc(description: "An object that includes the page_info and currentPage values specified in the query")
+}
+
+type SalesPop @doc(description: "Salespop defines all Salespop information") {
+    pop_id: Int @doc(description: "Popup ID")
+    name: String @doc(description: "Salespop name")
+    status: Int @doc(description: "Popup status")
+    store_ids: String @doc(description: "Store Views")
+    customer_group_ids: String @doc(description: "Customer Groups")
+    content: String @doc(description: "Popup content")
+    pop_type: String @doc(description: "Popup type")
+    device: Int @doc(description: "Popup show on device")
+    position: String @doc(description: "Popup position")
+    page: Int @doc(description: "Popup display on page")
+    page_type: String @doc(description: "Popup display on page type")
+    cms_page_id: String @doc(description: "Popup display on cms page ID")
+    category_ids: String @doc(description: "Popup display on category IDs")
+    show_product_page: Int @doc(description: "Popup display on product page")
+    number_recent_order: Int @doc(description: "The limitation number of orders are selected to show the purchased products on live popups")
+    check_order_time: Int @doc(description: "Specify the time amount to check order data")
+    background_image: String @doc(description: "Popup background image")
+    checkout_image: String @doc(description: "Checkout image")
+    border_color: String @doc(description: "Popup border color")
+    text_color: String @doc(description: "Popup text color")
+    hover_link_color: String @doc(description: "Popup hover link color")
+    view: Int @doc(description: "Number of popup views")
+    click: Int @doc(description: "Number of popup clicks")
+    close: Int @doc(description: "Number of popup closes")
+    parent_id: Int @doc(description: "Popup parent ID")
+}
+
+input SalesPopFilterInput @doc(description: "SalesPopFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.") {
+    pop_id: FilterTypeInput @doc(description: "The salespop id")
+    name: FilterTypeInput @doc(description: "The salespop name")
+    status: FilterTypeInput @doc(description: "The salespop status")
+    pop_type: FilterTypeInput @doc(description: "The salespop type")
+    position: FilterTypeInput @doc(description: "The salespop position")
+    or: SalesPopFilterInput @doc(description: "The keyword required to perform a logical OR comparison")
+}
