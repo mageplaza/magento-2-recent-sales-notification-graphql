@@ -94,7 +94,7 @@ class SalesPop implements ResolverInterface
         $searchCriteria = $this->searchCriteriaBuilder->build($field->getName(), $args);
         $searchCriteria->setCurrentPage($args['currentPage']);
         $searchCriteria->setPageSize($args['pageSize']);
-        $collection = $this->dataProvider->getData($searchCriteria);
+        $collection     = $this->dataProvider->getData($searchCriteria);
         $collectionSize = $collection->getSize();
         //possible division by 0
         $pageSize = $collection->getPageSize();
@@ -116,7 +116,7 @@ class SalesPop implements ResolverInterface
 
         return [
             'total_count' => $collection->getSize(),
-            'items' => $collection->getItems(),
+            'items'       => $collection->getItems(),
             'page_info'   => [
                 'page_size'    => $pageSize,
                 'current_page' => $currentPage,

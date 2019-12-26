@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop;
 
 use Magento\Framework\GraphQl\Query\Resolver\IdentityInterface;
-use Mageplaza\SalesPop\Api\Data\SalesPopInterface;
 
 /**
  * Class Identity
@@ -38,6 +37,7 @@ class Identity implements IdentityInterface
      * Get page ID from resolved data
      *
      * @param array $resolvedData
+     *
      * @return string[]
      */
     public function getIdentities(array $resolvedData): array
