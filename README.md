@@ -1,4 +1,4 @@
-# Sales Pop GraphQL
+# Magento 2 Sales Pop GraphQL / PWA (FREE)
 
 ## How to install
 Run the following command in Magento 2 root folder:
