@@ -1,5 +1,7 @@
 # Magento 2 Sales Pop GraphQL / PWA (FREE)
 
+**Magento 2 Sales Pop GraphQL is a part of Mageplaza Sales Pop extension that adds GraphQL features.** This highly supports PWA compatibility.
+
 [Mageplaza Sales Pop for Magento 2](https://www.mageplaza.com/magento-2-sales-pop/) enables online stores to show customers' real-time purchases as an effective way to market the products and stimulate customers' purchasing decisions.
 
 Customers will consider a lot of factors before purchasing a product from an online store. That sales pop shows the stores' continuous purchases will somehow eliminate the doubt in customers' minds about the store and make them feel safer to make payment. The real-time number of sales displays is an effective and cost-saving way to market the products.
@@ -23,8 +25,6 @@ Mageplaza Sales Pop supports sales pop-ups on multiple pages, including CMS page
 You can customize the sales pop design and content easily with an HTML-supported and friendly message formula from the admin backend. You can change the background image of the popup, the border, text, link and hover link color easily to match your store theme. 
 
 The extension supports A/B testing. One child popup will be created and run along with the parent popup so that you can continue to keep track of both and measure which one is more effective. In addition, another comprehensive report will let you know how your sales popups are performing, the good, the bad, and the uly of all sales pops will be revealed through the number of views, clicks, and closes to make the comparison more accurately. 
-
-What’s more, **Magento 2 Sales Pop GraphQL is a part of Mageplaza Sales Pop extension that adds GraphQL features.** This highly supports PWA compatibility.
 
 ## 1. How to install
 Run the following command in Magento 2 root folder:
