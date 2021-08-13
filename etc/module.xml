@@ -21,10 +21,10 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Mageplaza_SalesPopGraphQl">
+    <module name="Mageplaza_RecentSalesNotificationGraphQl">
         <sequence>
             <module name="Mageplaza_Core"/>
-            <module name="Mageplaza_SalesPop"/>
+            <module name="Mageplaza_RecentSalesNotification"/>
         </sequence>
     </module>
 </config>

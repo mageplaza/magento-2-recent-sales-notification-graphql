@@ -1,22 +1,22 @@
 
 type Query {
-    mpsalespop (
-        filter: SalesPopFilterInput @doc(description: "Identifies which popup attributes to search for and return."),
+    mpRecentSalesNotification (
+        filter: RecentSalesNotificationFilterInput @doc(description: "Identifies which popup attributes to search for and return."),
         pageSize: Int = 20 @doc(description: "Specifies the maximum number of results to return at once. This attribute is optional."),
         currentPage: Int = 1 @doc(description: "Specifies which page of results to return. The default value is 1.")
-    ): SalesPops
-    @resolver(class: "Mageplaza\\SalesPopGraphQl\\Model\\Resolver\\SalesPop") @doc(description: "The sales pop query returns information about popups") @cache(cacheIdentity: "Mageplaza\\SalesPopGraphQl\\Model\\Resolver\\SalesPop\\Identity")
+    ): RecentSalesNotifications
+    @resolver(class: "Mageplaza\\RecentSalesNotificationGraphQl\\Model\\Resolver\\RecentSalesNotification") @doc(description: "The recent sales notification query returns information about popups") @cache(cacheIdentity: "Mageplaza\\RecentSalesNotificationGraphQl\\Model\\Resolver\\RecentSalesNotification\\Identity")
 }
 
-type SalesPops @doc(description: "Salespop information") {
-    items: [SalesPop] @doc(description: "An array of popups")
-    total_count: Int @doc(description: "The number of salespop returned")
+type RecentSalesNotifications @doc(description: "RecentSalesNotification information") {
+    items: [RecentSalesNotification] @doc(description: "An array of popups")
+    total_count: Int @doc(description: "The number of recent sales notification returned")
     page_info: SearchResultPageInfo @doc(description: "An object that includes the page_info and currentPage values specified in the query")
 }
 
-type SalesPop @doc(description: "Salespop defines all Salespop information") {
+type RecentSalesNotification @doc(description: "RecentSalesNotification defines all RecentSalesNotification information") {
     pop_id: Int @doc(description: "Popup ID")
-    name: String @doc(description: "Salespop name")
+    name: String @doc(description: "RecentSalesNotification name")
     status: Int @doc(description: "Popup status")
     store_ids: String @doc(description: "Store Views")
     customer_group_ids: String @doc(description: "Customer Groups")
@@ -42,11 +42,11 @@ type SalesPop @doc(description: "Salespop defines all Salespop information") {
     parent_id: Int @doc(description: "Popup parent ID")
 }
 
-input SalesPopFilterInput @doc(description: "SalesPopFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.") {
-    pop_id: FilterTypeInput @doc(description: "The salespop id")
-    name: FilterTypeInput @doc(description: "The salespop name")
-    status: FilterTypeInput @doc(description: "The salespop status")
-    pop_type: FilterTypeInput @doc(description: "The salespop type")
-    position: FilterTypeInput @doc(description: "The salespop position")
-    or: SalesPopFilterInput @doc(description: "The keyword required to perform a logical OR comparison")
+input RecentSalesNotificationFilterInput @doc(description: "RecentSalesNotificationFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.") {
+    pop_id: FilterTypeInput @doc(description: "The RecentSalesNotification id")
+    name: FilterTypeInput @doc(description: "The RecentSalesNotification name")
+    status: FilterTypeInput @doc(description: "The RecentSalesNotification status")
+    pop_type: FilterTypeInput @doc(description: "The RecentSalesNotification type")
+    position: FilterTypeInput @doc(description: "The RecentSalesNotification position")
+    or: RecentSalesNotificationFilterInput @doc(description: "The keyword required to perform a logical OR comparison")
 }

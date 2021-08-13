@@ -14,19 +14,20 @@
  * version in the future.
  *
  * @category    Mageplaza
- * @package     Mageplaza_SalesPopGraphQl
+ * @package     Mageplaza_RecentSalesNotificationGraphQl
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 declare(strict_types=1);
 
-namespace Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop\FilterArgument;
+namespace Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification\FilterArgument;
 
 use Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesInterface;
+use Mageplaza\RecentSalesNotification\Helper\Data;
 
 /**
  * Class EntityAttributesForAst
- * @package Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop\FilterArgument
+ * @package Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification\FilterArgument
  */
 class EntityAttributesForAst implements FieldEntityAttributesInterface
 {
@@ -36,12 +37,21 @@ class EntityAttributesForAst implements FieldEntityAttributesInterface
     protected $additionalAttributes = ['pop_id', 'name', 'status', 'pop_type', 'position'];
 
     /**
+     * @var Data
+     */
+    protected $helperData;
+
+    /**
      * EntityAttributesForAst constructor.
      *
+     * @param Data $helperData
      * @param array $additionalAttributes
      */
-    public function __construct(array $additionalAttributes = [])
-    {
+    public function __construct(
+        Data $helperData,
+        array $additionalAttributes = []
+    ) {
+        $this->helperData           = $helperData;
         $this->additionalAttributes = array_merge($this->additionalAttributes, $additionalAttributes);
     }
 
@@ -55,6 +65,6 @@ class EntityAttributesForAst implements FieldEntityAttributesInterface
             $fields[$attribute] = 'String';
         }
 
-        return array_keys($fields);
+        return $this->helperData->versionCompare('2.3.4') ? $fields : array_keys($fields);
     }
 }
