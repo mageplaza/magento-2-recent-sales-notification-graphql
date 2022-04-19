@@ -14,7 +14,7 @@
  * version in the future.
  *
  * @category    Mageplaza
- * @package     Mageplaza_SalesPopGraphQl
+ * @package     Mageplaza_RecentSalesNotificationGraphQl
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
@@ -23,6 +23,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Mageplaza_SalesPopGraphQl',
+    'Mageplaza_RecentSalesNotificationGraphQl',
     __DIR__
 );

@@ -14,22 +14,22 @@
  * version in the future.
  *
  * @category    Mageplaza
- * @package     Mageplaza_SalesPopGraphQl
+ * @package     Mageplaza_RecentSalesNotificationGraphQl
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 declare(strict_types=1);
 
-namespace Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop;
+namespace Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification;
 
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
-use Mageplaza\SalesPop\Model\ResourceModel\SalesPop\Collection;
-use Mageplaza\SalesPop\Model\ResourceModel\SalesPop\CollectionFactory;
+use Mageplaza\RecentSalesNotification\Model\ResourceModel\RecentSalesNotification\Collection;
+use Mageplaza\RecentSalesNotification\Model\ResourceModel\RecentSalesNotification\CollectionFactory;
 
 /**
  * Class DataProvider
- * @package Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop
+ * @package Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification
  */
 class DataProvider
 {

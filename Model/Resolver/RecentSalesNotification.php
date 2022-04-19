@@ -14,27 +14,27 @@
  * version in the future.
  *
  * @category    Mageplaza
- * @package     Mageplaza_SalesPopGraphQl
+ * @package     Mageplaza_RecentSalesNotificationGraphQl
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 declare(strict_types=1);
 
-namespace Mageplaza\SalesPopGraphQl\Model\Resolver;
+namespace Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver;
 
 use Magento\Framework\GraphQl\Config\Element\Field;
 use Magento\Framework\GraphQl\Exception\GraphQlInputException;
 use Magento\Framework\GraphQl\Query\Resolver\Argument\SearchCriteria\Builder as SearchCriteriaBuilder;
 use Magento\Framework\GraphQl\Query\ResolverInterface;
 use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
-use Mageplaza\SalesPop\Helper\Data;
-use Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop\DataProvider;
+use Mageplaza\RecentSalesNotification\Helper\Data;
+use Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification\DataProvider;
 
 /**
- * Class SalesPop
- * @package Mageplaza\SalesPopGraphQl\Model\Resolver
+ * Class RecentSalesNotification
+ * @package Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver
  */
-class SalesPop implements ResolverInterface
+class RecentSalesNotification implements ResolverInterface
 {
     /**
      * @var DataProvider
@@ -52,7 +52,7 @@ class SalesPop implements ResolverInterface
     protected $searchCriteriaBuilder;
 
     /**
-     * SalesPop constructor.
+     * RecentSalesNotificationGraphQl constructor.
      *
      * @param SearchCriteriaBuilder $searchCriteriaBuilder
      * @param DataProvider $dataProvider

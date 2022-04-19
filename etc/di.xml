@@ -15,7 +15,7 @@
  * version in the future.
  *
  * @category    Mageplaza
- * @package     Mageplaza_SalesPopGraphQl
+ * @package     Mageplaza_RecentSalesNotificationGraphQl
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
@@ -25,7 +25,7 @@
     <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesPool">
         <arguments>
             <argument name="attributesInstances" xsi:type="array">
-                <item name="mpsalespop" xsi:type="object">Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop\FilterArgument\EntityAttributesForAst</item>
+                <item name="mpRecentSalesNotification" xsi:type="object">Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification\FilterArgument\EntityAttributesForAst</item>
             </argument>
         </arguments>
     </type>

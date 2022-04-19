@@ -14,24 +14,24 @@
  * version in the future.
  *
  * @category    Mageplaza
- * @package     Mageplaza_SalesPopGraphQl
+ * @package     Mageplaza_RecentSalesNotificationGraphQl
  * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 declare(strict_types=1);
 
-namespace Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop;
+namespace Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification;
 
 use Magento\Framework\GraphQl\Query\Resolver\IdentityInterface;
 
 /**
  * Class Identity
- * @package Mageplaza\SalesPopGraphQl\Model\Resolver\SalesPop
+ * @package Mageplaza\RecentSalesNotificationGraphQl\Model\Resolver\RecentSalesNotification
  */
 class Identity implements IdentityInterface
 {
     /** @var string */
-    private $cacheTag = 'salespop_';
+    private $cacheTag = 'recentsalesnotification_';
 
     /**
      * Get page ID from resolved data
