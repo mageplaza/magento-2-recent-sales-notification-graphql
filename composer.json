@@ -2,7 +2,7 @@
   "name": "mageplaza/module-recent-sales-notification-graphql",
   "description": "Magento 2 Recent Sales Notification GraphQL Extension",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "proprietary",
   "authors": [
     {
